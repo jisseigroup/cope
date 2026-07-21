@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const BRANDS = [
   {
-    name: "COPE",
+    name: "Cope",
     body: "Modern apparel through thoughtful design, innovation, and exceptional quality—built to be worn on repeat and made to last.",
     image: "/images/hero-model-white.jpg",
     imagePosition: "object-top",

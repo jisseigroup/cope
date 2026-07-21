@@ -193,7 +193,7 @@ export default function HomePage() {
 
           <div className="mt-14 grid gap-5 md:grid-cols-2 md:gap-6">
             <BrandPanel
-              name="COPE"
+              name="Cope"
               line="Modern apparel through thoughtful design, innovation, and exceptional quality."
               href="/brands"
               image="/images/hero-model-white.jpg"
