@@ -57,8 +57,17 @@ export default function HomePage() {
           <p className="animate-fade-up eyebrow text-ink/70">
             Creative brand development
           </p>
-          <h1 className="animate-fade-up delay-1 mt-5 max-w-5xl font-display text-[clamp(2.75rem,9vw,6.5rem)] leading-[0.95] font-medium tracking-tight text-ink text-balance">
-            COPE Clothing LLC
+          <h1 className="animate-fade-up delay-1 mt-5 max-w-5xl">
+            <span className="sr-only">Cope Clothing LLC</span>
+            <Image
+              src="/logo.png"
+              alt=""
+              width={4822}
+              height={643}
+              priority
+              sizes="(max-width: 640px) 90vw, 640px"
+              className="-translate-x-[6%] h-[clamp(2.75rem,9vw,6.5rem)] w-auto max-w-full object-contain object-left"
+            />
           </h1>
           <p className="animate-fade-up delay-2 mt-6 max-w-xl text-base font-light tracking-wide text-ink-soft sm:text-lg">
             The Crossroads of Luxury &amp; Responsibility. Home to the Brands We
