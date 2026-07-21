@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
-/** Framed media with scroll parallax + hover zoom (no card chrome). */
+/** Framed media with optional scroll parallax + hover zoom. */
 export function MediaFrame({
   src,
   alt,
@@ -12,6 +12,7 @@ export function MediaFrame({
   imageClassName = "",
   priority = false,
   sizes = "(max-width: 1024px) 100vw, 50vw",
+  fit = "cover",
 }: {
   src: string;
   alt: string;
@@ -19,27 +20,29 @@ export function MediaFrame({
   imageClassName?: string;
   priority?: boolean;
   sizes?: string;
+  /** "contain" shows the full image without cropping */
+  fit?: "cover" | "contain";
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
+  const contain = fit === "contain";
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-  // Only shift downward so top-anchored subjects (heads) stay in frame
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    reduce ? ["0%", "0%"] : ["0%", "5%"],
+    reduce || contain ? ["0%", "0%"] : ["0%", "5%"],
   );
 
   return (
     <div
       ref={ref}
-      className={`group/media relative overflow-hidden bg-paper-deep ${className}`}
+      className={`group/media relative ${contain ? "" : "overflow-hidden"} ${className}`}
     >
       <motion.div
-        className="absolute inset-x-0 top-0 bottom-[-5%]"
+        className={contain ? "absolute inset-0" : "absolute inset-x-0 top-0 bottom-[-5%]"}
         style={{ y }}
       >
         <Image
@@ -48,13 +51,13 @@ export function MediaFrame({
           fill
           priority={priority}
           sizes={sizes}
-          className={`object-cover object-top transition duration-[1.15s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/media:scale-[1.03] ${imageClassName}`}
+          className={
+            contain
+              ? `object-contain object-center transition duration-[1.15s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/media:scale-[1.02] ${imageClassName}`
+              : `object-cover object-top transition duration-[1.15s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/media:scale-[1.03] ${imageClassName}`
+          }
         />
       </motion.div>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-ink/0 transition duration-700 group-hover/media:bg-ink/10"
-      />
     </div>
   );
 }

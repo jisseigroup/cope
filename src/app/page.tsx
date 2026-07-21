@@ -90,30 +90,55 @@ export default function HomePage() {
       {/* What We Do */}
       <section
         id="what-we-do"
-        className="scroll-mt-28 border-t border-line bg-paper-deep py-16 sm:py-20"
+        className="scroll-mt-28 border-t border-line bg-paper-deep py-16 sm:py-24"
       >
-        <div className="site-shell grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <Reveal preset="scale">
-            <MediaFrame
-              src="/images/hero-model-white.jpg"
-              alt="Model in sweatshirt and sweatpants"
-              className="aspect-[3/4]"
-              imageClassName="object-[center_12%]"
-            />
+        <div className="site-shell grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
+          <Reveal>
+            <div className="relative mx-auto w-full max-w-[28rem] lg:mx-0">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -top-6 -left-2 z-0 font-display text-[clamp(6rem,18vw,9rem)] leading-none font-medium text-ink/[0.04] select-none sm:-top-8 sm:-left-4"
+              >
+                01
+              </span>
+              <figure className="relative z-10">
+                <div className="relative aspect-[3/4] overflow-hidden bg-[linear-gradient(180deg,#f7f7f7_0%,#ffffff_42%,#ececec_100%)]">
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_28%,rgba(255,255,255,0.95)_0%,transparent_55%)]"
+                  />
+                  <div className="absolute inset-x-[4%] top-[4%] bottom-0">
+                    <Image
+                      src="/images/hero-model.png"
+                      alt="Model in sweatshirt and sweatpants"
+                      fill
+                      sizes="(max-width: 1024px) 90vw, 28rem"
+                      className="object-contain object-bottom transition duration-[1.25s] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.02]"
+                    />
+                  </div>
+                </div>
+                <figcaption className="mt-5 flex items-center justify-between gap-6">
+                  <span className="h-px flex-1 bg-line" />
+                  <span className="shrink-0 text-[0.625rem] tracking-[0.28em] text-muted uppercase">
+                    Studio look
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
           </Reveal>
-          <Reveal delay={0.08}>
+          <Reveal delay={0.1}>
             <p className="eyebrow">What we do</p>
-            <h2 className="mt-4 font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.08] font-medium text-ink">
+            <h2 className="mt-4 max-w-md font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.08] font-medium text-ink">
               Design. Develop. Build brands.
             </h2>
-            <p className="mt-5 max-w-md text-base font-light leading-relaxed text-ink-soft sm:text-lg">
+            <p className="mt-6 max-w-md text-base font-light leading-relaxed text-ink-soft sm:text-lg">
               A creative brand development company building modern apparel
               brands through thoughtful design, innovation, and exceptional
               quality.
             </p>
             <Link
               href="/about"
-              className="focus-ring link-text mt-8 inline-block text-ink"
+              className="focus-ring link-text mt-10 inline-block text-ink"
             >
               Read more
             </Link>
@@ -206,7 +231,7 @@ export default function HomePage() {
             <MediaFrame
               src="/images/lounge.jpg"
               alt="Studio atmosphere"
-              className="aspect-[4/5]"
+              className="aspect-[4/5] bg-paper-deep"
             />
           </Reveal>
           <div>
