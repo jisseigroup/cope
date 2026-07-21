@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 const BRANDS = [
   {
     name: "COPE",
-    body: "One of the Brands We Love—developed and managed by COPE Clothing LLC through thoughtful design, innovation, and exceptional quality.",
+    body: "Modern apparel through thoughtful design, innovation, and exceptional quality—built to be worn on repeat and made to last.",
     image: "/images/hero-model-white.jpg",
-    imagePosition: "object-[center_8%]",
+    imagePosition: "object-top",
   },
   {
     name: "Petticoat Alley",
-    body: "One of the Brands We Love—developed and managed by COPE Clothing LLC alongside COPE, through thoughtful design, innovation, and exceptional quality.",
+    body: "A brand we love—developed and managed alongside COPE with the same care for design, quality, and lasting style.",
     image: "/images/sweatshirt.jpg",
-    imagePosition: "object-[center_20%]",
+    imagePosition: "object-[center_18%]",
   },
 ] as const;
 
@@ -30,18 +30,18 @@ export default function BrandsPage() {
   return (
     <>
       <article>
-        <section className="bg-paper-deep pt-32 pb-16 sm:pt-40 sm:pb-20">
+        <section className="border-b border-line bg-paper-deep pt-32 pb-16 sm:pt-40 sm:pb-20">
           <div className="site-shell">
             <Reveal>
               <p className="eyebrow">Brand portfolio</p>
             </Reveal>
             <TextReveal
               as="h1"
-              className="mt-5 max-w-4xl font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] font-medium text-ink"
+              className="mt-5 max-w-4xl font-display text-[clamp(2.5rem,6vw,4.25rem)] leading-[1.02] font-medium text-ink"
               text="Home to the Brands We Love"
             />
-            <Reveal delay={0.15}>
-              <p className="mt-6 max-w-xl text-base font-light text-ink-soft sm:text-lg">
+            <Reveal delay={0.12}>
+              <p className="mt-6 max-w-xl text-base font-light leading-relaxed text-ink-soft sm:text-lg">
                 COPE Clothing LLC develops and manages modern apparel
                 brands—COPE and Petticoat Alley.
               </p>
@@ -49,27 +49,39 @@ export default function BrandsPage() {
           </div>
         </section>
 
-        <div className="site-shell">
-          <div className="grid gap-5 md:grid-cols-2 md:gap-6">
-            {BRANDS.map((brand, i) => (
-              <BrandPanel
-                key={brand.name}
-                name={brand.name}
-                line={brand.body}
-                href="/capabilities"
-                image={brand.image}
-                index={i}
-                imagePosition={brand.imagePosition}
-              />
-            ))}
-          </div>
-        </div>
-
-        <section className="border-t border-line py-20 sm:py-24">
+        <section className="py-14 sm:py-20">
           <div className="site-shell">
+            <div className="grid gap-5 md:grid-cols-2 md:gap-6">
+              {BRANDS.map((brand, i) => (
+                <BrandPanel
+                  key={brand.name}
+                  name={brand.name}
+                  line={brand.body}
+                  href="/contact"
+                  image={brand.image}
+                  index={i}
+                  imagePosition={brand.imagePosition}
+                  cta="Inquire"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-line bg-paper-deep py-16 sm:py-20">
+          <div className="site-shell flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <Reveal>
-              <Link href="/capabilities" className="focus-ring link-text text-ink">
+              <p className="eyebrow">Next</p>
+              <p className="mt-3 max-w-md font-display text-2xl font-medium text-ink sm:text-3xl">
                 How we build brands
+              </p>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <Link
+                href="/capabilities"
+                className="focus-ring link-text text-ink"
+              >
+                View capabilities
               </Link>
             </Reveal>
           </div>

@@ -11,6 +11,7 @@ export function BrandPanel({
   image,
   index = 0,
   imagePosition = "object-top",
+  cta = "View brand",
 }: {
   name: string;
   line: string;
@@ -19,6 +20,7 @@ export function BrandPanel({
   index?: number;
   /** Tailwind object-position class so faces stay in frame */
   imagePosition?: string;
+  cta?: string;
 }) {
   const reduce = useReducedMotion();
 
@@ -39,7 +41,7 @@ export function BrandPanel({
         alt=""
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
-        className={`object-cover opacity-80 transition duration-[1.25s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] group-hover:opacity-95 ${imagePosition}`}
+        className={`object-cover origin-top opacity-80 transition duration-[1.25s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] group-hover:opacity-95 ${imagePosition}`}
       />
       <div
         aria-hidden
@@ -59,7 +61,7 @@ export function BrandPanel({
           href={href}
           className="focus-ring link-text mt-8 inline-block w-fit text-white"
         >
-          View brand
+          {cta}
         </Link>
       </div>
     </motion.article>

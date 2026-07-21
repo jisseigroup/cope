@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { SiteFooter } from "@/components/SiteFooter";
 import { TextReveal } from "@/components/TextReveal";
@@ -14,55 +15,75 @@ export default function ContactPage() {
   return (
     <>
       <article>
-        <section className="relative overflow-hidden bg-ink pt-32 pb-20 text-white sm:pt-40 sm:pb-28">
-          <div className="absolute inset-0 opacity-30">
+        <section className="relative overflow-hidden border-b border-white/10 bg-ink pt-32 pb-16 text-white sm:pt-40 sm:pb-20">
+          <div className="absolute inset-0 opacity-25">
             <Image
               src="/images/lounge.jpg"
               alt=""
               fill
               sizes="100vw"
-              className="object-cover"
+              className="object-cover object-[92%_center]"
             />
           </div>
-          <div aria-hidden className="absolute inset-0 bg-ink/70" />
+          <div aria-hidden className="absolute inset-0 bg-ink/75" />
           <div className="site-shell relative z-10">
             <Reveal>
-              <p className="text-[0.6875rem] tracking-[0.24em] text-white/40 uppercase">
+              <p className="text-[0.6875rem] tracking-[0.24em] text-white/45 uppercase">
                 Contact
               </p>
             </Reveal>
             <TextReveal
               as="h1"
-              className="mt-5 max-w-4xl font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] font-medium text-white"
-              text="Let's build\nsomething lasting."
+              className="mt-5 max-w-3xl font-display text-[clamp(2.5rem,6vw,4.25rem)] leading-[1.02] font-medium text-white"
+              text={"Let's build\nsomething lasting."}
             />
-            <Reveal delay={0.15}>
-              <p className="mt-6 max-w-md text-base font-light text-white/65 sm:text-lg">
-                Reach us for brand partnerships, licensing, and development
-                inquiries.
+            <Reveal delay={0.12}>
+              <p className="mt-6 max-w-md text-base font-light leading-relaxed text-white/65 sm:text-lg">
+                Brand partnerships, licensing, and development inquiries.
               </p>
             </Reveal>
           </div>
         </section>
 
-        <section className="border-t border-line py-20 sm:py-28">
-          <div className="site-shell grid gap-14 lg:grid-cols-2 lg:gap-20">
+        <section className="py-16 sm:py-24">
+          <div className="site-shell grid gap-12 sm:grid-cols-2 lg:gap-20">
             <Reveal>
               <p className="eyebrow">Email</p>
               <a
                 href="mailto:contact@cope.clothing"
-                className="focus-ring mt-4 inline-block font-display text-2xl text-ink transition hover:opacity-70 sm:text-4xl"
+                className="focus-ring mt-4 inline-block break-all font-display text-2xl text-ink transition hover:opacity-70 sm:text-3xl"
               >
                 contact@cope.clothing
               </a>
             </Reveal>
-            <Reveal delay={0.1}>
+            <Reveal delay={0.08}>
               <p className="eyebrow">Studio</p>
-              <p className="mt-4 text-lg font-light leading-relaxed text-ink-soft sm:text-xl">
+              <address className="mt-4 not-italic text-lg font-light leading-relaxed text-ink-soft sm:text-xl">
+                COPE Clothing LLC
+                <br />
                 250 West 39th Street, Suite 304
                 <br />
                 New York, NY 10018
-              </p>
+              </address>
+            </Reveal>
+          </div>
+
+          <div className="site-shell mt-16 border-t border-line pt-10 sm:mt-20">
+            <Reveal>
+              <div className="flex flex-wrap gap-8">
+                <Link href="/about" className="focus-ring link-text text-ink">
+                  About
+                </Link>
+                <Link href="/brands" className="focus-ring link-text text-ink">
+                  Brand portfolio
+                </Link>
+                <Link
+                  href="/capabilities"
+                  className="focus-ring link-text text-ink"
+                >
+                  Capabilities
+                </Link>
+              </div>
             </Reveal>
           </div>
         </section>

@@ -94,36 +94,14 @@ export default function HomePage() {
       >
         <div className="site-shell grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
           <Reveal>
-            <div className="relative mx-auto w-full max-w-[28rem] lg:mx-0">
-              <span
-                aria-hidden
-                className="pointer-events-none absolute -top-6 -left-2 z-0 font-display text-[clamp(6rem,18vw,9rem)] leading-none font-medium text-ink/[0.04] select-none sm:-top-8 sm:-left-4"
-              >
-                01
-              </span>
-              <figure className="relative z-10">
-                <div className="relative aspect-[3/4] overflow-hidden bg-[linear-gradient(180deg,#f7f7f7_0%,#ffffff_42%,#ececec_100%)]">
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_28%,rgba(255,255,255,0.95)_0%,transparent_55%)]"
-                  />
-                  <div className="absolute inset-x-[4%] top-[4%] bottom-0">
-                    <Image
-                      src="/images/hero-model.png"
-                      alt="Model in sweatshirt and sweatpants"
-                      fill
-                      sizes="(max-width: 1024px) 90vw, 28rem"
-                      className="object-contain object-bottom transition duration-[1.25s] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.02]"
-                    />
-                  </div>
-                </div>
-                <figcaption className="mt-5 flex items-center justify-between gap-6">
-                  <span className="h-px flex-1 bg-line" />
-                  <span className="shrink-0 text-[0.625rem] tracking-[0.28em] text-muted uppercase">
-                    Studio look
-                  </span>
-                </figcaption>
-              </figure>
+            <div className="relative mx-auto w-full max-w-md overflow-hidden bg-paper-deep aspect-[25/24] sm:max-w-lg lg:mx-0 lg:max-w-none lg:aspect-[10/9]">
+              <Image
+                src="/images/hero-model-white.jpg"
+                alt="Model in sweatshirt and sweatpants"
+                fill
+                sizes="(max-width: 1024px) 90vw, 50vw"
+                className="object-cover object-top transition duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03]"
+              />
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -210,7 +188,7 @@ export default function HomePage() {
               href="/brands"
               image="/images/hero-model-white.jpg"
               index={0}
-              imagePosition="object-[center_8%]"
+              imagePosition="object-top"
             />
             <BrandPanel
               name="Petticoat Alley"
@@ -232,6 +210,7 @@ export default function HomePage() {
               src="/images/lounge.jpg"
               alt="Studio atmosphere"
               className="aspect-[4/5] bg-paper-deep"
+              imageClassName="!object-[92%_center]"
             />
           </Reveal>
           <div>
