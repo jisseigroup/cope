@@ -42,13 +42,13 @@ export default function CapabilitiesPage() {
     <>
       <article>
         <section className="bg-paper-deep pt-32 pb-16 sm:pt-40 sm:pb-20">
-          <div className="site-shell max-w-4xl">
+          <div className="site-shell">
             <Reveal>
               <p className="eyebrow">Capabilities</p>
             </Reveal>
             <TextReveal
               as="h1"
-              className="mt-5 font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] font-medium text-ink"
+              className="mt-5 max-w-4xl font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] font-medium text-ink"
               text={"Brand development,\nend to end"}
             />
             <Reveal delay={0.15}>

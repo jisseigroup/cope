@@ -16,11 +16,13 @@ const BRANDS = [
     name: "COPE",
     body: "One of the Brands We Love—developed and managed by COPE Clothing LLC through thoughtful design, innovation, and exceptional quality.",
     image: "/images/hero-model-white.jpg",
+    imagePosition: "object-[center_8%]",
   },
   {
     name: "Petticoat Alley",
     body: "One of the Brands We Love—developed and managed by COPE Clothing LLC alongside COPE, through thoughtful design, innovation, and exceptional quality.",
-    image: "/images/crew-black.jpg",
+    image: "/images/sweatshirt.jpg",
+    imagePosition: "object-[center_20%]",
   },
 ] as const;
 
@@ -29,13 +31,13 @@ export default function BrandsPage() {
     <>
       <article>
         <section className="bg-paper-deep pt-32 pb-16 sm:pt-40 sm:pb-20">
-          <div className="site-shell max-w-4xl">
+          <div className="site-shell">
             <Reveal>
               <p className="eyebrow">Brand portfolio</p>
             </Reveal>
             <TextReveal
               as="h1"
-              className="mt-5 font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] font-medium text-ink"
+              className="mt-5 max-w-4xl font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] font-medium text-ink"
               text="Home to the Brands We Love"
             />
             <Reveal delay={0.15}>
@@ -47,17 +49,20 @@ export default function BrandsPage() {
           </div>
         </section>
 
-        <div className="grid md:grid-cols-2">
-          {BRANDS.map((brand, i) => (
-            <BrandPanel
-              key={brand.name}
-              name={brand.name}
-              line={brand.body}
-              href="/capabilities"
-              image={brand.image}
-              index={i}
-            />
-          ))}
+        <div className="site-shell">
+          <div className="grid gap-5 md:grid-cols-2 md:gap-6">
+            {BRANDS.map((brand, i) => (
+              <BrandPanel
+                key={brand.name}
+                name={brand.name}
+                line={brand.body}
+                href="/capabilities"
+                image={brand.image}
+                index={i}
+                imagePosition={brand.imagePosition}
+              />
+            ))}
+          </div>
         </div>
 
         <section className="border-t border-line py-20 sm:py-24">

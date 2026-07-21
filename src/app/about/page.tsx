@@ -16,13 +16,13 @@ export default function AboutPage() {
     <>
       <article>
         <section className="relative overflow-hidden bg-paper-deep pt-32 pb-20 sm:pt-40 sm:pb-28">
-          <div className="site-shell max-w-4xl">
+          <div className="site-shell">
             <Reveal>
               <p className="eyebrow">About</p>
             </Reveal>
             <TextReveal
               as="h1"
-              className="mt-5 font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] font-medium text-ink"
+              className="mt-5 max-w-4xl font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] font-medium text-ink"
               text={"The Crossroads of\nLuxury & Responsibility."}
             />
           </div>
@@ -66,17 +66,17 @@ export default function AboutPage() {
         </section>
 
         <section className="border-t border-line bg-ink py-20 text-white sm:py-28">
-          <div className="site-shell max-w-3xl">
+          <div className="site-shell">
             <Reveal>
               <p className="text-[0.6875rem] tracking-[0.24em] text-white/40 uppercase">
                 Philosophy
               </p>
-              <h2 className="mt-5 font-display text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] font-medium">
+              <h2 className="mt-5 max-w-3xl font-display text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] font-medium">
                 Practice Mending.
                 <br />
                 Swapping. Sharing.
               </h2>
-              <p className="mt-8 text-base font-light leading-relaxed text-white/65 sm:text-lg">
+              <p className="mt-8 max-w-3xl text-base font-light leading-relaxed text-white/65 sm:text-lg">
                 Our philosophy is simple: buy better, wear longer, mend, swap,
                 share, and pass it on. By creating timeless products with purpose
                 and longevity in mind, we&apos;re encouraging a more thoughtful

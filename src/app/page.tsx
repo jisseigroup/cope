@@ -46,10 +46,10 @@ const CAPABILITIES = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero — brand first, MAG-scale presence */}
+      {/* Hero — brand first */}
       <section
         aria-label="Hero"
-        className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-4 pt-32 pb-16 sm:px-8 sm:pb-20 lg:px-10"
+        className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden pt-32 pb-16 sm:pb-20"
       >
         <HeroVideo />
 
@@ -87,44 +87,33 @@ export default function HomePage() {
         </a>
       </section>
 
-      {/* What We Do — MAG structure + image */}
+      {/* What We Do */}
       <section
         id="what-we-do"
-        className="scroll-mt-28 border-t border-line bg-paper-deep py-24 sm:py-32"
+        className="scroll-mt-28 border-t border-line bg-paper-deep py-16 sm:py-20"
       >
-        <div className="site-shell grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <Reveal>
-              <p className="eyebrow">What we do</p>
-              <TextReveal
-                as="h2"
-                className="mt-5 font-display text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.05] font-medium text-ink"
-                text={"Design. Develop.\nBuild brands."}
-                delay={0.05}
-              />
-            </Reveal>
-            <Reveal delay={0.15} className="mt-10">
-              <MediaFrame
-                src="/images/tee-white.jpg"
-                alt="Apparel design detail"
-                className="aspect-[4/5] w-full max-w-md"
-              />
-            </Reveal>
-          </div>
-          <Reveal delay={0.12} className="lg:pt-16">
-            <p className="text-lg font-light leading-relaxed text-ink-soft sm:text-xl">
-              COPE Clothing LLC is a creative brand development company focused
-              on building modern apparel brands through thoughtful design,
-              innovation, and exceptional quality.
-            </p>
-            <p className="mt-6 text-base font-light leading-relaxed text-muted sm:text-lg">
-              We develop and manage the brands we build—guiding strategy,
-              design, licensing, product development, sourcing, and global
-              manufacturing partnerships.
+        <div className="site-shell grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <Reveal preset="scale">
+            <MediaFrame
+              src="/images/hero-model-white.jpg"
+              alt="Model in sweatshirt and sweatpants"
+              className="aspect-[3/4]"
+              imageClassName="object-[center_12%]"
+            />
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="eyebrow">What we do</p>
+            <h2 className="mt-4 font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.08] font-medium text-ink">
+              Design. Develop. Build brands.
+            </h2>
+            <p className="mt-5 max-w-md text-base font-light leading-relaxed text-ink-soft sm:text-lg">
+              A creative brand development company building modern apparel
+              brands through thoughtful design, innovation, and exceptional
+              quality.
             </p>
             <Link
               href="/about"
-              className="focus-ring link-text mt-10 inline-block text-ink"
+              className="focus-ring link-text mt-8 inline-block text-ink"
             >
               Read more
             </Link>
@@ -132,9 +121,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Philosophy — Practice Mending. Swapping. Sharing. */}
+      {/* Philosophy */}
       <section className="relative overflow-hidden bg-ink text-white">
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-20">
           <Image
             src="/images/sweatshirt.jpg"
             alt=""
@@ -145,36 +134,23 @@ export default function HomePage() {
         </div>
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-r from-ink via-ink/88 to-ink/65"
+          className="absolute inset-0 bg-ink/80"
         />
 
-        <div className="site-shell relative z-10 py-24 sm:py-32">
-          <Reveal>
-            <p className="text-[0.6875rem] tracking-[0.24em] text-white/40 uppercase">
-              Philosophy
-            </p>
-            <p className="mt-4 max-w-lg text-sm font-light text-white/50 sm:text-base">
-              How we think about clothing—and the life of every piece after it
-              leaves the studio.
-            </p>
-          </Reveal>
-          <div className="mt-12 max-w-3xl">
+        <div className="site-shell relative z-10 py-16 sm:py-20">
+          <p className="text-[0.6875rem] tracking-[0.24em] text-white/45 uppercase">
+            Philosophy
+          </p>
+          <div className="mt-6 max-w-4xl">
             <PhilosophyHeadline />
           </div>
-          <Reveal delay={0.3}>
-            <p className="mt-14 max-w-xl text-base font-light leading-relaxed text-white/65 sm:text-lg">
-              Buy better, wear longer, mend, swap, share, and pass it on.
-              Timeless products with purpose and longevity—where great design,
-              quality, and lasting style outlive trends.
-            </p>
-          </Reveal>
-        </div>
-        <div className="relative z-10">
-          <PhilosophyMarquee />
+          <div className="mt-12">
+            <PhilosophyMarquee />
+          </div>
         </div>
       </section>
 
-      {/* Brand Portfolio — MAG “Our Brands” */}
+      {/* Brand Portfolio */}
       <section className="border-t border-line bg-white py-24 sm:py-32">
         <div className="site-shell">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
@@ -201,23 +177,25 @@ export default function HomePage() {
               </Link>
             </Reveal>
           </div>
-        </div>
 
-        <div className="mt-14 grid md:grid-cols-2">
-          <BrandPanel
-            name="COPE"
-            line="Modern apparel through thoughtful design, innovation, and exceptional quality."
-            href="/brands"
-            image="/images/hero-model-white.jpg"
-            index={0}
-          />
-          <BrandPanel
-            name="Petticoat Alley"
-            line="A brand we love—built and managed alongside COPE."
-            href="/brands"
-            image="/images/crew-black.jpg"
-            index={1}
-          />
+          <div className="mt-14 grid gap-5 md:grid-cols-2 md:gap-6">
+            <BrandPanel
+              name="COPE"
+              line="Modern apparel through thoughtful design, innovation, and exceptional quality."
+              href="/brands"
+              image="/images/hero-model-white.jpg"
+              index={0}
+              imagePosition="object-[center_8%]"
+            />
+            <BrandPanel
+              name="Petticoat Alley"
+              line="A brand we love—built and managed alongside COPE."
+              href="/brands"
+              image="/images/sweatshirt.jpg"
+              index={1}
+              imagePosition="object-[center_20%]"
+            />
+          </div>
         </div>
       </section>
 

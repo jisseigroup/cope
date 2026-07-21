@@ -25,7 +25,7 @@ export default function ContactPage() {
             />
           </div>
           <div aria-hidden className="absolute inset-0 bg-ink/70" />
-          <div className="site-shell relative z-10 max-w-4xl">
+          <div className="site-shell relative z-10">
             <Reveal>
               <p className="text-[0.6875rem] tracking-[0.24em] text-white/40 uppercase">
                 Contact
@@ -33,7 +33,7 @@ export default function ContactPage() {
             </Reveal>
             <TextReveal
               as="h1"
-              className="mt-5 font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] font-medium text-white"
+              className="mt-5 max-w-4xl font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.02] font-medium text-white"
               text="Let's build\nsomething lasting."
             />
             <Reveal delay={0.15}>
