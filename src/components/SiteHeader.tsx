@@ -59,7 +59,10 @@ export function SiteHeader() {
       }`}
     >
       <div className="site-shell grid h-16 grid-cols-[1fr_auto_1fr] items-center sm:h-20">
-        <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
+        <nav
+          className="col-start-1 hidden items-center gap-9 lg:flex"
+          aria-label="Primary"
+        >
           {NAV_LINKS.map((l) => (
             <Link
               key={l.href}
@@ -76,7 +79,7 @@ export function SiteHeader() {
         <button
           ref={toggleRef}
           type="button"
-          className="focus-ring relative flex h-11 w-11 items-center justify-center justify-self-start lg:hidden"
+          className="focus-ring relative col-start-1 flex h-11 w-11 items-center justify-center justify-self-start lg:hidden"
           aria-expanded={open}
           aria-controls={menuId}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -96,7 +99,17 @@ export function SiteHeader() {
           />
         </button>
 
-        <Link href="/" className="focus-ring justify-self-center">
+        <Link
+          href="/"
+          aria-label="Cope Clothing LLC home"
+          className="focus-ring relative z-10 col-start-2 justify-self-center"
+          onClick={() => {
+            if (pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+            setOpen(false);
+          }}
+        >
           <span className="relative block h-7 w-[10rem] sm:h-8 sm:w-[11.5rem]">
             <Image
               src="/cope-light.svg"
@@ -112,11 +125,14 @@ export function SiteHeader() {
 
         <Link
           href="/contact"
-          className="focus-ring hidden justify-self-end text-[0.6875rem] font-normal tracking-[0.22em] text-ink uppercase lg:inline"
+          className="focus-ring col-start-3 hidden justify-self-end text-[0.6875rem] font-normal tracking-[0.22em] text-ink uppercase lg:inline"
         >
           Contact
         </Link>
-        <span className="justify-self-end lg:hidden" aria-hidden />
+        <span
+          className="col-start-3 justify-self-end lg:hidden"
+          aria-hidden
+        />
       </div>
 
       <AnimatePresence>
