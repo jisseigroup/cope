@@ -1,18 +1,16 @@
 # COPE Clothing LLC — Website
 
-Next.js site for [COPE Clothing LLC](https://cope.clothing).
+Active site (v2). Version 1 is archived at `../website-v1`.
 
-## Develop
+## Structure
+
+Inspired by parent-company apparel sites like [Millennial Apparel Group](https://millennialapparelgroup.com/), with stronger editorial motion and a clearer brand-first hierarchy.
+
+- `/` — What we do, mission, brand portfolio, spotlight, capabilities, studio
+- `/about` · `/brands` · `/capabilities` · `/contact`
+
+## Dev
 
 ```bash
-npm install
-npm run dev
+npm run dev -- -p 3000
 ```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-## Brand assets
-
-- `public/logo.png` — cropped wordmark (transparent background)
-- `public/logo-source.png` — original square artwork
-- `public/icon.png` — favicon / app icon

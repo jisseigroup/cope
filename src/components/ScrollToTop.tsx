@@ -20,7 +20,7 @@ export function ScrollToTop() {
     <button
       type="button"
       aria-label="Scroll to top"
-      className="focus-ring fixed right-4 bottom-4 z-40 flex h-11 w-11 items-center justify-center border border-ink bg-ink text-white transition hover:bg-sage sm:right-6 sm:bottom-6"
+      className="focus-ring fixed right-4 bottom-4 z-40 flex h-11 w-11 items-center justify-center border border-ink bg-ink text-white transition hover:opacity-80 sm:right-6 sm:bottom-6"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
     >
       <svg
