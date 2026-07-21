@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import "./globals.css";
 
-/** Matches logo wordmark "Cope." — high-contrast Didone / modern serif */
-const display = Bodoni_Moda({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-/** Matches logo subline "Clothing LLC" — light geometric sans */
+/** UI / body — light geometric sans */
 const body = Montserrat({
   variable: "--font-body",
   subsets: ["latin"],
@@ -45,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
+    <html lang="en" className={`${body.variable} h-full`}>
       <body className="flex min-h-full flex-col font-sans font-light antialiased">
         <SiteHeader />
         <main className="flex-1">{children}</main>

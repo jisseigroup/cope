@@ -58,7 +58,7 @@ export function SiteHeader() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="site-shell grid h-20 grid-cols-[1fr_auto_1fr] items-center sm:h-24">
+      <div className="site-shell grid h-16 grid-cols-[1fr_auto_1fr] items-center sm:h-20">
         <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
           {NAV_LINKS.map((l) => (
             <Link
@@ -97,13 +97,13 @@ export function SiteHeader() {
         </button>
 
         <Link href="/" className="focus-ring justify-self-center">
-          <span className="relative block h-[4.235rem] w-[16.94rem] sm:h-[4.84rem] sm:w-[21.78rem]">
+          <span className="relative block h-7 w-[10rem] sm:h-8 sm:w-[11.5rem]">
             <Image
               src="/logo.png"
               alt="Cope Clothing LLC"
               fill
               priority
-              sizes="349px"
+              sizes="184px"
               className="object-contain"
             />
           </span>

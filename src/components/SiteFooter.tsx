@@ -15,11 +15,11 @@ export function SiteFooter() {
         <div>
           <Link href="/" className="focus-ring relative block h-12 w-48">
             <Image
-              src="/logo.png"
+              src="/logo-dark.png"
               alt="Cope Clothing LLC"
               fill
               sizes="192px"
-              className="object-contain object-left brightness-0 invert"
+              className="object-contain object-left"
             />
           </Link>
           <p className="mt-6 max-w-xs text-sm font-light leading-relaxed text-white/55">

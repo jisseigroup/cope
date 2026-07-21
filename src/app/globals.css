@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Verona Serial Light";
+  src: url("/fonts/VeronaSerial-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --ink: #0a0a0a;
   --ink-soft: #2e2e2e;
@@ -11,6 +19,7 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --background: #ffffff;
   --foreground: var(--ink);
+  --font-display: "Verona Serial Light", Georgia, "Times New Roman", serif;
 }
 
 @theme inline {
@@ -45,8 +54,16 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-display), "Times New Roman", serif;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+}
+
+/* Verona Serial Light is a single cut — keep brand type from faux-bolding */
+.font-display.font-medium,
+.font-display.font-semibold,
+.font-display.font-bold {
+  font-weight: 300;
 }
 
 .site-shell {
