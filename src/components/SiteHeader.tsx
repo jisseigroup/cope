@@ -99,12 +99,13 @@ export function SiteHeader() {
         <Link href="/" className="focus-ring justify-self-center">
           <span className="relative block h-7 w-[10rem] sm:h-8 sm:w-[11.5rem]">
             <Image
-              src="/logo.png"
+              src="/cope-light.svg"
               alt="Cope Clothing LLC"
               fill
               priority
               sizes="184px"
               className="object-contain"
+              unoptimized
             />
           </span>
         </Link>

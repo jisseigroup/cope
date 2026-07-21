@@ -60,13 +60,14 @@ export default function HomePage() {
           <h1 className="animate-fade-up delay-1 mt-5 max-w-5xl">
             <span className="sr-only">Cope Clothing LLC</span>
             <Image
-              src="/logo.png"
+              src="/cope-light.svg"
               alt=""
-              width={4822}
-              height={643}
+              width={1199}
+              height={170}
               priority
               sizes="(max-width: 640px) 90vw, 640px"
-              className="-translate-x-[6%] h-[clamp(2.75rem,9vw,6.5rem)] w-auto max-w-full object-contain object-left"
+              className="h-[clamp(2.75rem,9vw,6.5rem)] w-auto max-w-full object-contain object-left"
+              unoptimized
             />
           </h1>
           <p className="animate-fade-up delay-2 mt-6 max-w-xl text-base font-light tracking-wide text-ink-soft sm:text-lg">
